@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useState, useRef, type FormEvent } from 'react';
 import {
   Zap,
   Clock,
@@ -24,6 +24,7 @@ const issueCategories = [
   { id: 'wiring', title: 'Short Circuit / Wire Fault', desc: 'Burning smell, exposed wire or earth leakage' },
   { id: 'inverter', title: 'Inverter & Battery Setup', desc: 'Inverter wiring, battery backup or replacement' },
   { id: 'inspection', title: 'General Inspection / AMC', desc: 'Full home or commercial electrical checkup' },
+  { id: 'other', title: 'Other / Custom Issue', desc: 'Not listed above? Type your problem below' },
 ];
 
 const timeSlots = [
@@ -36,6 +37,7 @@ const timeSlots = [
 
 export function BookElectrician() {
   const [selectedIssue, setSelectedIssue] = useState('tripping');
+  const [customIssue, setCustomIssue] = useState('');
   const [selectedSlot, setSelectedSlot] = useState('morning');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -43,6 +45,7 @@ export function BookElectrician() {
   const [details, setDetails] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
+  const customInputRef = useRef<HTMLInputElement>(null);
 
   const selectedIssueObj = issueCategories.find((i) => i.id === selectedIssue);
   const selectedSlotObj = timeSlots.find((s) => s.id === selectedSlot);
@@ -53,10 +56,18 @@ export function BookElectrician() {
       setError('Please provide your name, phone number, and address.');
       return;
     }
+
+    if (selectedIssue === 'other' && !customIssue.trim()) {
+      setError('Please describe your custom electrical issue in the box below.');
+      customInputRef.current?.focus();
+      return;
+    }
     setError('');
 
     // Pre-fill WhatsApp message for quick booking
-    const issueText = selectedIssueObj?.title || selectedIssue;
+    const issueText = selectedIssue === 'other'
+      ? `Custom Issue: ${customIssue.trim()}`
+      : (customIssue.trim() ? `${selectedIssueObj?.title} (${customIssue.trim()})` : selectedIssueObj?.title || selectedIssue);
     const slotText = selectedSlotObj?.label || selectedSlot;
     const msg = encodeURIComponent(
       `Hello Om Electronics,\n\nI want to *Book an Electrician*:\n` +
@@ -161,7 +172,12 @@ export function BookElectrician() {
                             <button
                               key={issue.id}
                               type="button"
-                              onClick={() => setSelectedIssue(issue.id)}
+                              onClick={() => {
+                                setSelectedIssue(issue.id);
+                                if (issue.id === 'other') {
+                                  setTimeout(() => customInputRef.current?.focus(), 50);
+                                }
+                              }}
                               className={`flex flex-col text-left rounded-xl border p-4 transition-all ${
                                 active
                                   ? 'border-electric bg-electric/5 shadow-sm ring-1 ring-electric'
@@ -178,6 +194,45 @@ export function BookElectrician() {
                             </button>
                           );
                         })}
+                      </div>
+
+                      {/* Custom Issue Input Box */}
+                      <div className={`mt-3.5 rounded-xl border p-4 transition-all ${
+                        selectedIssue === 'other'
+                          ? 'border-electric bg-electric/5 shadow-sm ring-1 ring-electric'
+                          : 'border-light-grey bg-white hover:border-charcoal/30'
+                      }`}>
+                        <div className="flex items-center justify-between mb-1.5">
+                          <label className="block text-xs font-bold text-navy">
+                            Not listed above? Type your custom electrical issue:
+                          </label>
+                          {selectedIssue === 'other' && (
+                            <span className="text-[11px] font-semibold text-electric bg-white px-2 py-0.5 rounded-full border border-electric/30">
+                              Active
+                            </span>
+                          )}
+                        </div>
+                        <input
+                          ref={customInputRef}
+                          type="text"
+                          placeholder="e.g. Water motor starter issue, geyser wiring, chandelier fitting, doorbell repair..."
+                          value={customIssue}
+                          onChange={(e) => {
+                            setCustomIssue(e.target.value);
+                            if (e.target.value.trim() && selectedIssue !== 'other') {
+                              setSelectedIssue('other');
+                            }
+                          }}
+                          onFocus={() => {
+                            if (selectedIssue !== 'other') {
+                              setSelectedIssue('other');
+                            }
+                          }}
+                          className="w-full rounded-lg border border-light-grey bg-white px-3.5 py-2.5 text-sm text-navy outline-none placeholder:text-charcoal/40 focus:border-electric focus:ring-2 focus:ring-electric/20"
+                        />
+                        <p className="mt-1.5 text-[11px] text-charcoal/60">
+                          Describe your specific problem and our electrician will arrive with the appropriate tools and equipment.
+                        </p>
                       </div>
                     </div>
 
