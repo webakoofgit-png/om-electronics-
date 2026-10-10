@@ -187,11 +187,11 @@ export const WHATSAPP_NUMBER = '918975187479'; // Om Electronics Business WhatsA
 export const WHATSAPP_BASE = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export function buildProductWhatsAppLink(product: Product, priority?: string): string {
-  const priorityText = priority
-    ? deliveryPriorities.find((p) => p.id === priority)?.label || priority
-    : 'Standard';
+  const priorityLine = priority
+    ? `\nDelivery priority: ${deliveryPriorities.find((p) => p.id === priority)?.label || priority}`
+    : '';
   const message = encodeURIComponent(
-    `Hello Om Electronics,\n\nI would like to order:\n*${product.name}*\nPrice: ₹${product.price}\nDelivery priority: ${priorityText}\n\nPlease confirm availability and delivery details.`
+    `Hello Om Electronics,\n\nI would like to order:\n*${product.name}*\nPrice: ₹${product.price}${priorityLine}\n\nPlease confirm availability and delivery details.`
   );
   return `${WHATSAPP_BASE}?text=${message}`;
 }

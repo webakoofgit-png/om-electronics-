@@ -1,15 +1,10 @@
-import { useState } from 'react';
-import { Truck } from 'lucide-react';
-import { products, deliveryPriorities, buildProductWhatsAppLink } from '../data/products';
+import { products, buildProductWhatsAppLink } from '../data/products';
 import { Breadcrumb } from '../components/Breadcrumb';
 import { SectionHeading } from '../components/SectionHeading';
 import { Button } from '../components/Button';
 import { WhatsAppIcon } from '../components/WhatsAppIcon';
 
 export function Products() {
-  const [selectedPriority, setSelectedPriority] = useState('3days');
-  const [activeProduct, setActiveProduct] = useState<string | null>(null);
-
   return (
     <>
       <section className="bg-navy py-16 md:py-20">
@@ -19,45 +14,13 @@ export function Products() {
             Electrical Products
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/70">
-            Quality electrical parts and materials. Select a product and order via WhatsApp with
-            your preferred delivery priority.
+            Quality electrical parts and materials. Select any product to order directly via WhatsApp.
           </p>
         </div>
       </section>
 
       <section className="py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Delivery priority selector */}
-          <div className="mb-10 rounded-2xl border border-light-grey bg-white p-6 shadow-sm">
-            <div className="flex items-start gap-3">
-              <Truck className="mt-0.5 h-5 w-5 text-electric" />
-              <div className="flex-1">
-                <h2 className="font-semibold text-navy">Home delivery priority</h2>
-                <p className="mt-1 text-sm text-charcoal/70">
-                  Choose your preferred delivery timeline. Free shipping around 5 km*. Confirm
-                  details on WhatsApp.
-                </p>
-                <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                  {deliveryPriorities.map((p) => (
-                    <button
-                      key={p.id}
-                      type="button"
-                      onClick={() => setSelectedPriority(p.id)}
-                      className={`rounded-xl border-2 p-4 text-left transition ${
-                        selectedPriority === p.id
-                          ? 'border-electric bg-electric/5'
-                          : 'border-light-grey hover:border-electric/40'
-                      }`}
-                    >
-                      <p className="text-sm font-semibold text-navy">{p.label}</p>
-                      <p className="mt-1 text-xs text-charcoal/60">{p.description}</p>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
           <SectionHeading
             title="Available products"
             description="Click a product to order via WhatsApp. Prices are indicative and will be confirmed."
@@ -93,10 +56,9 @@ export function Products() {
                     )}
                   </div>
                   <Button
-                    href={buildProductWhatsAppLink(product, selectedPriority)}
+                    href={buildProductWhatsAppLink(product)}
                     variant="primary"
                     className="mt-4 w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white"
-                    onClick={() => setActiveProduct(product.id)}
                   >
                     <WhatsAppIcon className="h-4 w-4 mr-1.5" />
                     Order on WhatsApp
