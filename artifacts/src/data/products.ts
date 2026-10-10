@@ -64,7 +64,7 @@ export const deliveryPriorities = [
   { id: 'month', label: 'Within a month', description: 'Flexible non-urgent delivery' },
 ];
 
-export const WHATSAPP_NUMBER = '919876543210'; // Replace with verified business WhatsApp number
+export const WHATSAPP_NUMBER = '918975187479'; // Om Electronics Business WhatsApp
 export const WHATSAPP_BASE = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export function buildProductWhatsAppLink(product: Product, priority?: string): string {

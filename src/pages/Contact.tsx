@@ -106,8 +106,8 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-navy">Phone Helpline</p>
-                    <a href="tel:+919173400060" className="mt-0.5 block text-sm font-semibold text-electric hover:underline">
-                      +91 91734 00060
+                    <a href="tel:+918975187479" className="mt-0.5 block text-sm font-semibold text-electric hover:underline">
+                      +91 89751 87479
                     </a>
                     <span className="text-xs text-charcoal/50">Direct store line</span>
                   </div>

@@ -57,10 +57,9 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-navy">Phone</p>
-                    <a href="tel:+919876543210" className="mt-0.5 text-sm text-electric hover:underline">
-                      +91 98765 43210
+                    <a href="tel:+918975187479" className="mt-0.5 text-sm text-electric hover:underline">
+                      +91 89751 87479
                     </a>
-                    <p className="text-xs text-charcoal/50">(Replace with verified number)</p>
                   </div>
                 </li>
                 <li className="flex gap-3">

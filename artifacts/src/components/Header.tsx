@@ -47,7 +47,7 @@ export function Header() {
 
           <div className="hidden items-center gap-3 md:flex">
             <a
-              href="tel:+919876543210"
+              href="tel:+918975187479"
               className="flex items-center gap-1.5 text-sm font-medium text-charcoal/80 hover:text-navy"
             >
               <Phone className="h-4 w-4" />

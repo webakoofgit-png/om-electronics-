@@ -109,10 +109,10 @@ export function BookElectrician() {
           {/* Emergency call pill */}
           <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-white/90">
             <a
-              href="tel:+919173400060"
+              href="tel:+918975187479"
               className="inline-flex items-center gap-2 rounded-xl bg-amber px-4 py-2 font-semibold text-navy shadow hover:bg-amber/90 transition-colors"
             >
-              <Phone className="h-4 w-4" /> Call Helpline: +91 91734 00060
+              <Phone className="h-4 w-4" /> Call Helpline: +91 89751 87479
             </a>
             <a
               href={WHATSAPP_BASE}
@@ -294,7 +294,7 @@ export function BookElectrician() {
                           <input
                             type="tel"
                             required
-                            placeholder="e.g. 9876543210"
+                            placeholder="e.g. 8975187479"
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)}
                             className="w-full rounded-xl border border-light-grey px-3.5 py-2.5 text-sm outline-none focus:border-electric focus:ring-2 focus:ring-electric/20"
@@ -391,10 +391,10 @@ export function BookElectrician() {
                   If there is an active short circuit or risk of electrical fire, switch off the main MCB and call our priority line immediately:
                 </p>
                 <a
-                  href="tel:+919173400060"
+                  href="tel:+918975187479"
                   className="mt-4 flex items-center justify-center gap-2 rounded-xl bg-amber px-4 py-3 font-bold text-navy hover:bg-amber/90 transition-colors"
                 >
-                  <Phone className="h-4 w-4" /> +91 91734 00060
+                  <Phone className="h-4 w-4" /> +91 89751 87479
                 </a>
               </div>
 

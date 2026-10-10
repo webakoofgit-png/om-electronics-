@@ -23,7 +23,7 @@ import { FAQAccordion } from '../components/FAQAccordion';
 import { services } from '../data/services';
 import { testimonials } from '../data/testimonials';
 import { faqs } from '../data/faqs';
-import { products } from '../data/products';
+import { products, buildProductWhatsAppLink } from '../data/products';
 import { WhatsAppIcon } from '../components/WhatsAppIcon';
 
 const trustItems = [
@@ -163,7 +163,7 @@ function ProductCard({ product }: { product: any }) {
         <h3 className="mt-1 text-base font-semibold text-navy">{product.name}</h3>
         <p className="mt-1 text-sm font-bold text-electric">₹{product.price.toLocaleString('en-IN')}</p>
         <Button
-          href="/products"
+          href={buildProductWhatsAppLink(product)}
           variant="outline"
           className="mt-4 w-full border-charcoal/20 text-navy hover:border-[#25D366] hover:bg-[#25D366]/5"
         >

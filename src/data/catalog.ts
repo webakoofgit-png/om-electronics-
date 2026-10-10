@@ -1,4 +1,4 @@
-﻿export type CatalogProduct = {
+export type CatalogProduct = {
   id: number;
   name: string;
   image: string;
@@ -21,9 +21,9 @@ export type CatalogCategory = {
   image: string;
 };
 
-export const PHONE_DISPLAY = "+91 91734 00060";
-export const PHONE_TEL = "+919173400060";
-export const WHATSAPP_NUMBER = "919173400060";
+export const PHONE_DISPLAY = "+91 89751 87479";
+export const PHONE_TEL = "+918975187479";
+export const WHATSAPP_NUMBER = "918975187479";
 
 export const deliveryPriorities = [
   { id: "urgent", label: "Within 24 hours (Urgent)" },
