@@ -1,4 +1,4 @@
-import { Zap, MapPin, Mail, Phone, ExternalLink } from "lucide-react";
+import { MapPin, Mail, Phone, ExternalLink } from "lucide-react";
 import { services } from "../data/services";
 
 export function Footer() {
@@ -7,9 +7,13 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4 lg:col-span-2">
-            <a href="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber text-navy">
-                <Zap className="h-5 w-5" strokeWidth={2.5} />
+            <a href="/" className="group flex items-center gap-2.5">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white p-0.5 shadow transition-transform group-hover:scale-105">
+                <img
+                  src="/logo.png"
+                  alt="Om Electronics Logo"
+                  className="h-full w-full rounded-md object-contain"
+                />
               </div>
               <span className="text-xl font-bold">
                 Om<span className="text-amber">Electronics</span>

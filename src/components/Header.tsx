@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "./Button";
 
 const navLinks = [
@@ -17,10 +17,12 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-light-grey bg-warm-white/95 backdrop-blur-md">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
-            <a href="/" className="group flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy text-amber transition-transform group-hover:scale-105">
-                <Zap className="h-5 w-5" strokeWidth={2.5} />
-              </div>
+            <a href="/" className="group flex items-center gap-2.5">
+              <img
+                src="/logo.png"
+                alt="Om Electronics Logo"
+                className="h-10 w-10 rounded-lg object-contain transition-transform group-hover:scale-105"
+              />
               <span className="text-xl font-bold tracking-tight text-navy">
                 Om<span className="text-electric">Electronics</span>
               </span>
