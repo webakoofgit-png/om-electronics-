@@ -105,13 +105,20 @@ export function isMainModule(moduleUrl) {
 }
 
 function main(argv) {
-  const [command, ...args] = argv;
+  let [command, ...args] = argv;
   if (!command) {
     console.error("usage: node scripts/with-app-env.mjs <command> [args…]");
     process.exit(2);
   }
+  const isWin = process.platform === "win32";
+  if (isWin && command === "npx" && args[0] === "vite") {
+    command = "vite.cmd";
+    args = args.slice(1);
+  } else if (isWin && command === "npx") {
+    command = "npx.cmd";
+  }
   const env = mergeAppEnv(readAppEnv(projectRoot()), process.env);
-  const child = spawn(command, args, { stdio: "inherit", env, shell: process.platform === "win32" });
+  const child = spawn(command, args, { stdio: "inherit", env, shell: isWin });
   // The dev server is long-running and is stopped by signalling this wrapper.
   for (const signal of ["SIGINT", "SIGTERM", "SIGHUP"]) {
     process.on(signal, () => child.kill(signal));
