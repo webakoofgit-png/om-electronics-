@@ -16,14 +16,14 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-light-grey bg-warm-white/95 backdrop-blur-md">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
-            <a href="/" className="group flex items-center gap-2.5">
+          <div className="flex h-18 sm:h-20 items-center justify-between">
+            <a href="/" className="group flex items-center gap-3">
               <img
                 src="/logo.png"
                 alt="Om Electronics Logo"
-                className="h-10 w-10 rounded-lg object-contain transition-transform group-hover:scale-105"
+                className="h-12 w-12 sm:h-14 sm:w-14 rounded-lg object-contain transition-transform group-hover:scale-105"
               />
-              <span className="text-xl font-bold tracking-tight text-navy">
+              <span className="text-xl sm:text-2xl font-bold tracking-tight text-navy">
                 Om<span className="text-electric">Electronics</span>
               </span>
             </a>
