@@ -263,7 +263,7 @@ export function Home() {
             description="Send the TV brand, model number and a photo of the part label. We’ll help check compatibility and whether an original/OEM component is available."
           />
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button href="https://wa.me/918975187479?text=Hello%20Om%20Electronics%2C%20I%20need%20help%20finding%20a%20TV%20part.%20I%20will%20share%20the%20TV%20model%20and%20part%20photo." variant="primary">
+            <Button href="https://wa.me/919309517545?text=Hello%20Rurdra%20Electronics%2C%20I%20need%20help%20finding%20a%20TV%20part.%20I%20will%20share%20the%20TV%20model%20and%20part%20photo." variant="primary">
               Ask about a TV part
             </Button>
             <Button to="/book-electrician" variant="outline">

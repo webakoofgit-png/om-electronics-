@@ -23,7 +23,7 @@ export type CatalogCategory = {
 
 export const PHONE_DISPLAY = "+91 89751 87479";
 export const PHONE_TEL = "+918975187479";
-export const WHATSAPP_NUMBER = "918975187479";
+export const WHATSAPP_NUMBER = "919309517545";
 
 export const deliveryPriorities = [
   { id: "urgent", label: "Within 24 hours (Urgent)" },

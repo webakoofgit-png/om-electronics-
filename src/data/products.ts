@@ -21,7 +21,7 @@ export const deliveryPriorities = [
   { id: 'month', label: 'Flexible timing', description: 'For non-urgent enquiries' },
 ];
 
-export const WHATSAPP_NUMBER = '918975187479';
+export const WHATSAPP_NUMBER = '919309517545';
 export const WHATSAPP_BASE = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export function buildProductWhatsAppLink(product: Product, priority?: string): string {
