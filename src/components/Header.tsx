@@ -7,7 +7,7 @@ const navLinks = [
   { to: "/about", label: "About us" },
   { to: "/products", label: "Shop" },
   { to: "/contact", label: "Contact" },
-  { to: "/book-electrician", label: "Book Electrician" },
+  { to: "/book-electrician", label: "Book TV Service" },
 ];
 
 export function Header() {
@@ -19,12 +19,12 @@ export function Header() {
           <div className="flex h-18 sm:h-20 items-center justify-between">
             <a href="/" className="group flex items-center gap-3">
               <img
-                src="/logo.png"
-                alt="Om Electronics Logo"
+                src="/rurdra-mark.svg"
+                alt="Rurdra Electronics logo"
                 className="h-12 w-12 sm:h-14 sm:w-14 rounded-lg object-contain transition-transform group-hover:scale-105"
               />
               <span className="text-xl sm:text-2xl font-bold tracking-tight text-navy">
-                Om<span className="text-electric">Electronics</span>
+                Rurdra<span className="text-electric">Electronics</span>
               </span>
             </a>
 
@@ -42,7 +42,7 @@ export function Header() {
 
             <div className="hidden items-center gap-3 md:flex">
               <Button to="/book-electrician" size="sm">
-                Request a Service
+                Book TV Service
               </Button>
             </div>
 
@@ -75,7 +75,7 @@ export function Header() {
             ))}
             <div className="pt-2">
               <Button to="/book-electrician" className="w-full" onClick={() => setOpen(false)}>
-                Request a Service
+                Book TV Service
               </Button>
             </div>
           </div>

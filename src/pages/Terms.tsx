@@ -23,7 +23,7 @@ export function Terms() {
           <div>
             <h2 className="mb-2 text-lg font-semibold text-navy">1. Acceptance</h2>
             <p>
-              By using this website or requesting services/products from Om Electronics, you agree
+              By using this website or requesting services/products from Rurdra Electronics, you agree
               to these terms. If you do not agree, please do not use the site or submit enquiries.
             </p>
           </div>
@@ -31,19 +31,19 @@ export function Terms() {
           <div>
             <h2 className="mb-2 text-lg font-semibold text-navy">2. Services</h2>
             <p>
-              Electrical services are provided subject to availability, site conditions and agreed
-              scope. Estimates are indicative until confirmed. Work is carried out with a focus on
-              safety and professional standards. [Detailed service terms to be added.]
+              TV parts and TV purchase enquiries are subject to model compatibility and availability.
+              Confirm the exact item, condition, price, warranty and delivery terms with Rurdra Electronics
+              before placing an order.
             </p>
           </div>
 
           <div>
             <h2 className="mb-2 text-lg font-semibold text-navy">3. Products & delivery</h2>
             <p>
-              Product orders are processed via WhatsApp. Prices and availability are confirmed at
-              the time of order. Home delivery options include priority selection (e.g. within 24
-              hours, 3 days, etc.). Free shipping may apply within a limited radius. No returns
-              policy applies as stated by the business. [Full product terms to be confirmed.]
+              Product enquiries and orders may be handled via WhatsApp. Catalogue images are
+              illustrative; listings do not indicate live inventory or guaranteed OEM status. Price,
+              availability, compatibility, warranty and delivery terms must be confirmed directly
+              before ordering. Any return or cancellation terms will be confirmed at purchase.
             </p>
           </div>
 
@@ -74,7 +74,7 @@ export function Terms() {
           <div>
             <h2 className="mb-2 text-lg font-semibold text-navy">7. Contact</h2>
             <p>
-              Om Electronics
+              Rurdra Electronics
               <br />
               Shop No. 2, Plot No. 5-6, Sarvoday Nagar, Bhatar, Surat-395007, Gujarat
               <br />

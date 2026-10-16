@@ -29,7 +29,7 @@ export function FAQ() {
             Frequently Asked Questions
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/70">
-            Answers about service enquiries, repairs, installations, safety and scheduling.
+            Answers about TV parts, model compatibility and ordering.
           </p>
         </div>
       </section>

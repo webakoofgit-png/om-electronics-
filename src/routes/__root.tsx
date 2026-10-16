@@ -10,17 +10,17 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Om Electronics | Electrical Solutions. Done Right." },
+      { title: "Rurdra Electronics | TVs, Genuine Components & Parts" },
       {
         name: "description",
         content:
-          "Reliable electrical services for homes and businesses in Surat. Repairs, inspections, wiring, and product delivery.",
+          "Enquire about TV components and replacement parts. Get model matching help and confirm genuine/OEM availability, price and delivery with Rurdra Electronics in Surat.",
       },
       { name: "theme-color", content: "#142B3B" },
     ],
     links: [
-      { rel: "icon", type: "image/png", href: "/logo.png" },
-      { rel: "apple-touch-icon", href: "/logo.png" },
+      { rel: "icon", type: "image/svg+xml", href: "/rurdra-mark.svg" },
+      { rel: "apple-touch-icon", href: "/rurdra-mark.svg" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

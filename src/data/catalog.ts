@@ -34,7 +34,7 @@ export const deliveryPriorities = [
 
 export function whatsappOrderLink(name: string, price: number, priority: string) {
   const label = deliveryPriorities.find((p) => p.id === priority)?.label || priority;
-  const text = `Hello Om Electronics,\n\nI want to order:\n${name}\nPrice: Rs. ${price}\nHome delivery priority: ${label}\n\nPlease confirm availability and delivery.`;
+  const text = `Hello Rurdra Electronics,\n\nI want to order:\n${name}\nPrice: Rs. ${price}\nHome delivery priority: ${label}\n\nPlease confirm availability and delivery.`;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text.replace("\\n","\n"))}`;
 }
 

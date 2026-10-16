@@ -23,7 +23,7 @@ export function Privacy() {
           <div>
             <h2 className="mb-2 text-lg font-semibold text-navy">1. Introduction</h2>
             <p>
-              Om Electronics (â€œweâ€, â€œusâ€) respects your privacy. This policy describes how we may
+              Rurdra Electronics (â€œweâ€, â€œusâ€) respects your privacy. This policy describes how we may
               collect, use and protect information when you use our website or contact us for
               services or products.
             </p>

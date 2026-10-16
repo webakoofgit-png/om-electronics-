@@ -57,7 +57,7 @@ export function EnquiryForm() {
         <h3 className="text-xl font-semibold text-navy">Enquiry Received (Demo)</h3>
         <p className="mt-3 text-sm leading-relaxed text-charcoal/70">
           This is a frontend demonstration. Your enquiry has <strong>not</strong> been sent to
-          Om Electronics. In a live system this would be delivered to the team. Thank you for
+          Rurdra Electronics. In a live system this would be delivered to the team. Thank you for
           testing the form.
         </p>
         <Button

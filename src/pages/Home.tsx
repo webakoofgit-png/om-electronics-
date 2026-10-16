@@ -1,54 +1,32 @@
 import { useRef, useState, useEffect } from 'react';
 import {
   Shield,
-  Award,
   MessageSquare,
-  Clock,
-  ArrowRight,
   CheckCircle2,
   Search,
   Heart,
-  Undo2,
-  Truck,
   Headset,
-  Percent,
   ChevronLeft,
   ChevronRight,
 } from 'lucide-react';
 import { Button } from '../components/Button';
 import { SectionHeading } from '../components/SectionHeading';
-import { ServiceCard } from '../components/ServiceCard';
-import { TestimonialCard } from '../components/TestimonialCard';
 import { FAQAccordion } from '../components/FAQAccordion';
-import { services } from '../data/services';
-import { testimonials } from '../data/testimonials';
 import { faqs } from '../data/faqs';
 import { products, buildProductWhatsAppLink } from '../data/products';
 import { WhatsAppIcon } from '../components/WhatsAppIcon';
 
-const trustItems = [
-  { icon: Shield, title: 'Safety-First', desc: 'Every job prioritises safe isolation and correct practices.' },
-  { icon: Award, title: 'Quality Workmanship', desc: 'Neat, lasting solutions with attention to detail.' },
-  { icon: MessageSquare, title: 'Clear Communication', desc: 'We explain the issue and options before starting.' },
-  { icon: Clock, title: 'Reliable Service', desc: 'Scheduled visits and responsive support when you need us.' },
-];
-
 const features = [
-  { icon: Undo2, title: 'No Returns', desc: 'Shopping with no returns.' },
-  { icon: Truck, title: 'Free Shipping', desc: 'Free Shipping around 5 KMs*.' },
-  { icon: Headset, title: '8/8 Support', desc: 'Support available from 8 AM to 8 PM, always here just for you' },
-  { icon: Percent, title: 'Discounts', desc: 'Special prices for our loyal customers.' },
+  { icon: Search, title: 'Model matching', desc: 'Share your TV model for a compatibility check.' },
+  { icon: Shield, title: 'Genuine part enquiries', desc: 'Ask us to confirm OEM / original availability.' },
+  { icon: Headset, title: 'Direct support', desc: 'Get help identifying the right TV component.' },
+  { icon: MessageSquare, title: 'WhatsApp ordering', desc: 'Confirm part number, price and delivery first.' },
 ];
 
 const categories = [
-  { name: 'Protection', image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&q=80' },
-  { name: 'Switches', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80' },
-  { name: 'Lighting', image: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=400&q=80' },
-  { name: 'Wiring', image: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=400&q=80' },
-  { name: 'Boards', image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&q=80' },
-  { name: 'Accessories', image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&q=80' },
-  { name: 'Tools', image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&q=80' },
-  { name: 'Inverters', image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?w=400&q=80' },
+  { name: 'TV Components', image: 'https://images.unsplash.com/photo-1555617981-dac3880eac6e?w=400&q=80' },
+  { name: 'TV Parts', image: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400&q=80' },
+  { name: 'TV Accessories', image: 'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=400&q=80' },
 ];
 
 function CategoryCarousel() {
@@ -113,7 +91,7 @@ function CategoryCarousel() {
       <div
         ref={scrollRef}
         onScroll={checkScroll}
-        className="flex gap-5 sm:gap-7 lg:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory py-4 px-3"
+        className="flex gap-5 sm:gap-7 lg:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory py-4 px-3 md:justify-center"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {categories.map((cat) => (
@@ -161,7 +139,7 @@ function ProductCard({ product }: { product: any }) {
       </div>
       <div className="flex flex-1 flex-col p-5">
         <h3 className="mt-1 text-base font-semibold text-navy">{product.name}</h3>
-        <p className="mt-1 text-sm font-bold text-electric">₹{product.price.toLocaleString('en-IN')}</p>
+        <p className="mt-1 text-sm font-bold text-electric">Ask for price & availability</p>
         <Button
           href={buildProductWhatsAppLink(product)}
           variant="outline"
@@ -182,7 +160,7 @@ export function Home() {
       <section className="relative overflow-hidden bg-navy">
         <div className="absolute inset-0 opacity-20">
           <img
-            src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1600&q=80"
+              src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=1600&q=85"
             alt=""
             className="h-full w-full object-cover"
             loading="eager"
@@ -191,12 +169,12 @@ export function Home() {
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8 lg:py-32">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
-              Electrical Solutions.
+              TV Parts &
               <br />
-              <span className="text-amber">Done Right.</span>
+              <span className="text-amber">Genuine Components.</span>
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-white/80 md:text-xl">
-              Your one-stop destination for electrical services, repairs, and high-quality parts.
+              Find the right TV component with model-based support. Enquire about original and OEM parts, compatibility and pricing before you order.
             </p>
             
             {/* Search Bar matching target site */}
@@ -213,10 +191,7 @@ export function Home() {
 
             <div className="mt-10 flex flex-wrap gap-6 text-sm text-white/70">
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="h-4 w-4 text-amber" /> Book Electrician
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="h-4 w-4 text-amber" /> Shop Products
+                <CheckCircle2 className="h-4 w-4 text-amber" /> TV components & parts
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="h-4 w-4 text-amber" /> Fast Support
@@ -251,7 +226,7 @@ export function Home() {
           <SectionHeading
             eyebrow="Shop By Categories"
             title="Popular Categories"
-            description="Find exactly what you need from our extensive range of electrical components."
+            description="Browse TV components, replacement parts and accessories. Availability depends on your exact TV model."
           />
           <CategoryCarousel />
         </div>
@@ -263,7 +238,7 @@ export function Home() {
           <SectionHeading
             eyebrow="Deal of the Day"
             title="Featured Products"
-            description="Explore our top-selling electrical components and supplies with direct doorstep ordering."
+            description="Explore common TV part enquiries. Ask us to confirm model compatibility, genuine availability and price."
           />
           
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -279,39 +254,21 @@ export function Home() {
         </div>
       </section>
 
-      {/* Services overview - kept from original but condensed */}
+      {/* TV support */}
       <section className="bg-light-grey py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Our Services"
-            title="Book an Electrician"
-            description="Professional electrical services for homes & businesses."
+            eyebrow="Need help finding a part?"
+            title="Get a TV model match"
+            description="Send the TV brand, model number and a photo of the part label. We’ll help check compatibility and whether an original/OEM component is available."
           />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.slice(0, 3).map((s) => (
-              <ServiceCard key={s.id} service={s} />
-            ))}
-          </div>
-          <div className="mt-10 text-center">
-            <Button to="/book-electrician" variant="primary">
-              Book Electrician Now
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button href="https://wa.me/918975187479?text=Hello%20Om%20Electronics%2C%20I%20need%20help%20finding%20a%20TV%20part.%20I%20will%20share%20the%20TV%20model%20and%20part%20photo." variant="primary">
+              Ask about a TV part
             </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Feedback"
-            title="Customer testimonials"
-            description="Genuine customer feedback from our happy clients."
-          />
-          <div className="grid gap-6 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <TestimonialCard key={t.id} testimonial={t} />
-            ))}
+            <Button to="/book-electrician" variant="outline">
+              Book TV Service
+            </Button>
           </div>
         </div>
       </section>
@@ -322,7 +279,7 @@ export function Home() {
           <SectionHeading
             eyebrow="FAQs"
             title="Frequently asked questions"
-            description="Common questions about enquiries, repairs, installations and scheduling."
+            description="Common questions about finding, matching and ordering TV parts."
           />
           <FAQAccordion items={faqs.slice(0, 6)} />
         </div>

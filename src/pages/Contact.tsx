@@ -28,7 +28,7 @@ export function Contact() {
     if (!name.trim() || !phone.trim() || !message.trim()) return;
 
     const text = encodeURIComponent(
-      `Hello Om Electronics,\n\n*General Contact Message*:\n` +
+      `Hello Rurdra Electronics,\n\n*General Contact Message*:\n` +
       `• *Name:* ${name}\n` +
       `• *Phone:* ${phone}\n` +
       (email ? `• *Email:* ${email}\n` : '') +
@@ -46,23 +46,23 @@ export function Contact() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Breadcrumb items={[{ label: 'Contact' }]} />
           <h1 className="text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">
-            Contact Om Electronics
+            Contact Rurdra Electronics
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/70">
-            Have questions about electrical parts, bulk purchases, store location, or need assistance? Reach out to our team in Surat.
+            Need help finding a TV component, checking compatibility, or confirming availability? Reach out to our team in Surat.
           </p>
         </div>
       </section>
 
-      {/* Book Electrician Callout Banner */}
+      {/* TV parts callout */}
       <div className="bg-amber/10 border-b border-amber/20 py-3.5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
           <div className="flex items-center gap-2.5 text-navy font-medium">
             <Wrench className="h-4 w-4 text-amber shrink-0" />
-            <span>Looking for doorstep electrician repair or installation?</span>
+            <span>Looking for a TV part or genuine component?</span>
           </div>
-          <Button to="/book-electrician" variant="secondary" size="sm" className="whitespace-nowrap">
-            Go to Book Electrician <ArrowRight className="h-3.5 w-3.5 ml-1" />
+          <Button to="/products" variant="secondary" size="sm" className="whitespace-nowrap">
+            Browse TV Parts <ArrowRight className="h-3.5 w-3.5 ml-1" />
           </Button>
         </div>
       </div>

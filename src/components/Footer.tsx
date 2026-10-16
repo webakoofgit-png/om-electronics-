@@ -1,5 +1,4 @@
 import { MapPin, Mail, Phone, ExternalLink } from "lucide-react";
-import { services } from "../data/services";
 
 export function Footer() {
   return (
@@ -10,13 +9,13 @@ export function Footer() {
             <a href="/" className="group flex items-center gap-2.5">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white p-0.5 shadow transition-transform group-hover:scale-105">
                 <img
-                  src="/logo.png"
-                  alt="Om Electronics Logo"
+                  src="/rurdra-mark.svg"
+                  alt="Rurdra Electronics logo"
                   className="h-full w-full rounded-md object-contain"
                 />
               </div>
               <span className="text-xl font-bold">
-                Om<span className="text-amber">Electronics</span>
+                Rurdra<span className="text-amber">Electronics</span>
               </span>
             </a>
             <ul className="mt-6 space-y-4 text-sm text-white/70 max-w-md">
@@ -52,7 +51,8 @@ export function Footer() {
               {[
                 { to: "/about", label: "About Us" },
                 { to: "/contact", label: "Contact us" },
-                { to: "/book-electrician", label: "Book Electrician" },
+                { to: "/products", label: "TV Parts Catalogue" },
+                { to: "/book-electrician", label: "Book TV Service" },
               ].map((l) => (
                 <li key={l.label}>
                   <a href={l.to} className="text-white/70 transition hover:text-white">
@@ -86,7 +86,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-xs text-white/50">
-            &copy; {new Date().getFullYear()} Om Electronics. All Rights Reserved.
+            &copy; {new Date().getFullYear()} Rurdra Electronics. All Rights Reserved.
           </p>
           <div className="flex items-center gap-2 text-xs text-white/50">
              Payment: 
